@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 exports.__esModule = true;
 var message = 'Hello Welcome Back';
 console.log(message);
@@ -101,3 +114,34 @@ var p = {
     lastName: 'Wayn'
 };
 fullName(p);
+// Classes e Modificadores de Acesso
+var Employee = /** @class */ (function () {
+    function Employee(employeeName) {
+        this.employeeName = employeeName;
+    }
+    Employee.prototype.greet = function () {
+        console.log("Good morning " + this.employeeName);
+    };
+    return Employee;
+}());
+var employee1 = new Employee('Bruce');
+console.log(employee1.employeeName);
+employee1.greet();
+// Herança
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager(managerName) {
+        return _super.call(this, managerName) || this;
+    }
+    Manager.prototype.delegateWork = function () {
+        console.log('Manager delegates work');
+    };
+    return Manager;
+}(Employee));
+var manager1 = new Manager('Wayn');
+console.log(manager1.employeeName);
+manager1.delegateWork();
+manager1.greet();
+console.log(manager1.employeeName);
+// Modificadores de Acesso
+// Public, private, protected

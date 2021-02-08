@@ -134,3 +134,43 @@ let p = {
 }
 
 fullName(p);
+
+// Classes e Modificadores de Acesso
+
+class Employee {
+    public employeeName: string;
+
+    constructor(employeeName) {
+        this.employeeName = employeeName;
+
+    }
+
+    greet() {
+        console.log(`Good morning ${this.employeeName}`);
+    }
+}
+
+let employee1 = new Employee('Bruce');
+console.log(employee1.employeeName);
+employee1.greet();
+
+// Herança
+
+class Manager extends Employee {
+    constructor(managerName: string) {
+        super(managerName);
+    }
+
+    delegateWork() {
+        console.log('Manager delegates work');
+    }
+}
+
+let manager1 = new Manager('Wayn');
+console.log(manager1.employeeName);
+manager1.delegateWork();
+manager1.greet();
+console.log(manager1.employeeName);
+
+// Modificadores de Acesso
+// Public, private, protected
