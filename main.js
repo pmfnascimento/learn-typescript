@@ -66,3 +66,30 @@ var b = 20;
 var multiType;
 multiType = 20;
 multiType = true;
+// Funções
+function add(num1, num2) {
+    return num1 + num2;
+}
+add(5, 10);
+// opção de parametros
+function add1(num1, num2) {
+    if (num2) {
+        return num1 + num2;
+    }
+    else {
+        return num1;
+    }
+}
+add1(5);
+// parametros por defeito
+function add2(num1, num2) {
+    if (num2 === void 0) { num2 = 10; }
+    if (num2) {
+        return num1 + num2;
+    }
+    else {
+        return num1;
+    }
+}
+add2(5, 10); // 10
+add2(5); // 10
