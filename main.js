@@ -93,3 +93,11 @@ function add2(num1, num2) {
 }
 add2(5, 10); // 10
 add2(5); // 10
+function fullName(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+var p = {
+    firstName: 'Bruce',
+    lastName: 'Wayn'
+};
+fullName(p);

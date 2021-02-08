@@ -117,3 +117,20 @@ function add2(num1: number, num2: number = 10): number {
 }
 add2(5, 10); // 10
 add2(5); // 10
+
+// Interfaces
+
+interface Person {
+    firstName: string;
+    lastName?: string;// Opcional
+}
+
+function fullName(person: Person) {
+    console.log(`${person.firstName} ${person.lastName}`);
+}
+let p = {
+    firstName: 'Bruce',
+    lastName: 'Wayn'
+}
+
+fullName(p);
